@@ -1,0 +1,10 @@
+#chatArea {
+    background-color: #eeeeee;
+    height: 85vh
+}
+
+#msgArea {
+    background-color: #ffffff;
+    min-height: 15vh;
+}
+
