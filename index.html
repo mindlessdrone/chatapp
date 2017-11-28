@@ -5,25 +5,25 @@
         <link rel="stylesheet" href="css/site.css">
 
         <!-- AngularJS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid" ng-app="siteApp" ng-controller="siteCtrl">
             <div class="container-fluid" id="chatArea">
-                <div class="row msg">
-                    <div class="col">Test</div>
-                </div>
-                <div class="row msg">
-                    <div class="col">Test</div>
+                <div ng-repeat="m in msgs track by $index" class="row msg">
+                    <div class="col">{{ m }}</div>
                 </div>
             </div>
             <div class="container-fluid" id="msgArea">
-                <div class="row h-100 no-gutters">
+                <div class="row h-100 no-gutters" >
                     <div class="col-lg-10">
-                        <textarea class="form-control"></textarea>
+                        <form id="sendMsgForm" ng-submit="sendMsg()">
+                            <input type="text" class="form-control" ng-model="txt"></input>
+                        </form>
                     </div>
                     <div class="col-lg-2">
-                        <button type="button" class="btn btn-primary" id="sendButton">Send</button>
+                        <button type="submit" class="btn btn-primary" id="sendButton" form="sendMsgForm">Send</button>
                     </div>
                 </div>
             </div>
@@ -41,5 +41,10 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>       
 
+        <!-- socket.io -->
+        <script src="/js/socket.io.js"></script>
+
+        <!-- site js -->
+        <script src="/js/site.js"></script>
     </body>
 </html>

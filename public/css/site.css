@@ -6,8 +6,13 @@
 #msgArea {
     background-color: #ffffff;
     height: 10vh;
+    padding: 0
 }
 
+#sendMsgForm {
+    width: 100%;
+    height: 100%;
+}
 
 .msg:nth-child(even) {
     background-color: #aaa;
